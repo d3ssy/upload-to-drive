@@ -39,6 +39,10 @@ function uploadToDrive() {
   try {
    body = fs.createReadStream(`${target}`)
    actions.info('body', body)
+  } 
+  catch (e) {
+    actions.error('Something wrong creating body');
+    throw e;
   }
   
   drive.files.create({
