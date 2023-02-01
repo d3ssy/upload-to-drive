@@ -38,7 +38,7 @@ function uploadToDrive() {
       parents: [folder]
     },
     media: {
-      body: fs.createReadStream(`${name}`)
+      body: fs.createReadStream(`${target}`)
     },
     supportsAllDrives: true
   }).then(() => actions.info('File uploaded successfully'))
