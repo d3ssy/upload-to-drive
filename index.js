@@ -6,7 +6,7 @@ const archiver = require('archiver');
 /** Google Service Account credentials  encoded in base64 */
 const credentials = actions.getInput('credentials', { required: true });
 /** Google Drive Folder ID to upload the file/folder to */
-const folder = actions.getInput('folder', { required: true });
+const folder = actions.getInput('folder', { required: false });
 actions.info('folder', folder)
 /** Local path to the file/folder to upload */
 const target = actions.getInput('target', { required: true });
@@ -48,7 +48,7 @@ function uploadToDrive() {
   drive.files.create({
     requestBody: {
       name: filename,
-      parents: [folder]
+      //parents: [folder]
     },
     media: {
       body
