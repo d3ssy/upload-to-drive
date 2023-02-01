@@ -21,6 +21,7 @@ const drive = google.drive({ version: 'v3', auth });
 
 const driveLink = `https://drive.google.com/drive/folders/${folder}`
 let filename = target.split('\\').pop();
+console.log(filename);
 
 async function main() {
   actions.setOutput(link, driveLink);
@@ -37,7 +38,7 @@ function uploadToDrive() {
       parents: [folder]
     },
     media: {
-      body: fs.createReadStream(`${name || target}`)
+      body: fs.createReadStream(`${name}`)
     },
     supportsAllDrives: true
   }).then(() => actions.info('File uploaded successfully'))
