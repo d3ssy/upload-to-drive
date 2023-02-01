@@ -9,8 +9,6 @@ const credentials = actions.getInput('credentials', { required: true });
 const folder = actions.getInput('folder', { required: true });
 /** Local path to the file/folder to upload */
 const target = actions.getInput('target', { required: true });
-/** Optional name for the zipped file */
-const name = actions.getInput('name', { required: false });
 /** Link to the Drive folder */
 const link = 'link';
 
