@@ -38,7 +38,8 @@ function uploadToDrive() {
     media: {
       body: fs.createReadStream(`${target}`)
     },
-    supportsAllDrives: true
+    supportsAllDrives: true,
+    supportsTeamDrives: true
   }).then(() => actions.info('File uploaded successfully'))
     .catch(e => {
       actions.error('Upload failed');
