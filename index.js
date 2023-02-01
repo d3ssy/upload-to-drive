@@ -25,7 +25,7 @@ let filename = target.split('\\').pop();
 actions.info.('filename', filename);
 
 async function main() {
-  actions.setOutput(link, driveLink);
+  //actions.setOutput(link, driveLink);
   uploadToDrive();
 }
 /**
