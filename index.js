@@ -14,7 +14,7 @@ const target = actions.getInput('target', { required: true });
 const link = 'link';
 
 const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
-actions.info('credentialsJSON', credentialsJSON)
+actions.info('credentialsJSON', credentialsJSON.toString())
              
 const scopes = ['https://www.googleapis.com/auth/drive'];
 const auth = new google.auth.JWT(credentialsJSON.client_email, null, credentialsJSON.private_key, scopes);
@@ -22,7 +22,7 @@ const drive = google.drive({ version: 'v3', auth });
 
 const driveLink = `https://drive.google.com/drive/folders/${folder}`
 let filename = target.split('\\').pop();
-actions.info('filename', filename);
+actions.info('filename', filename.toString());
 
 async function main() {
   //actions.setOutput(link, driveLink);
@@ -38,7 +38,7 @@ function uploadToDrive() {
   
   try {
    body = fs.createReadStream(`${target}`)
-   actions.info('body', body)
+   actions.info('body', body.toString())
   } 
   catch (e) {
     actions.error('Something wrong creating body');
@@ -48,7 +48,7 @@ function uploadToDrive() {
   drive.files.create({
     requestBody: {
       name: filename,
-      //parents: [folder]
+      parents: [folder]
     },
     media: {
       body
