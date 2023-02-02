@@ -19,7 +19,7 @@ outputs:
   link:
     description: 'A link to the Drive folder'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'upload-cloud'  
