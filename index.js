@@ -22,7 +22,7 @@ const drive = google.drive({ version: 'v3', auth });
 
 const driveLink = `https://drive.google.com/drive/folders/${folder}`
 let filename = target.split('\\').pop();
-actions.info.('filename', filename);
+actions.info('filename', filename);
 
 async function main() {
   //actions.setOutput(link, driveLink);
