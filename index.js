@@ -49,7 +49,7 @@ function uploadToDrive() {
   drive.files.create({
     requestBody: {
       name: filename,
-      parents: ["1fqjMbmtpxQl7pTlVmKdrHKZqW4-3e0uK"]
+      parents: [folder]
     },
     media: {
       body
