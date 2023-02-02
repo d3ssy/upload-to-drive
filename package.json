@@ -4,13 +4,13 @@
   "description": "Github action to upload files or folders to Google Drive",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jodebu/upload-to-drive"
+    "url": "https://github.com/d3ssy/upload-to-drive"
   },
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js -C -m -o dist"
   },
-  "author": "Yayo Acosta",
+  "author": "Guido Maciocci",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.2.4",
